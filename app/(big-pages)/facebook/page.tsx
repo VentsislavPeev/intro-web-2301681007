@@ -1,7 +1,9 @@
-export default function YoutubePage(){
+import { YoutubeImg } from "../../../public/imgs/youtube-icon";
+
+export default function FacebookPage(){
    return(
       <div>
-        Facebook!
+        <YoutubeImg />
       </div>
    )
 }
