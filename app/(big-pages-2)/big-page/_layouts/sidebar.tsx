@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { MainRoutes, playlists, subscriptions } from "@/data/sidebar";
+import { playlists, subscriptions } from "@/data/sidebar";
 import { cn } from "@/lib/utils";
 import {
    ChevronDown,
