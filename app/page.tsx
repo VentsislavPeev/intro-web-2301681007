@@ -1,12 +1,12 @@
 "use client";
 
 import { CategoryPills } from "@/components/ui/category-pills";
-import PageHeader from "../_layouts/pageheader";
+import PageHeader from "./_layouts/pageheader";
 import { categories, videos } from "@/data/home";
 import { useState } from "react";
 import { VideoGridItem } from "@/components/ui/video-grid-item";
-import { Sidebar } from "../_layouts/sidebar";
-import { SidebarProvider } from "@/app/(big-pages-2)/big-page/contexts/SidebarContext";
+import { Sidebar } from "./_layouts/sidebar";
+import { SidebarProvider } from "@/app/contexts/SidebarContext";
 
 export default function YoutubePage() {
    const [selectedCategory, setSelectedCategory] = useState(categories[0]);
