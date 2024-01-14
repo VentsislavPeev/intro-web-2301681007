@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors"
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -27,7 +29,12 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: colors.neutral[700],
+          hover: colors.neutral[600],
+          border:colors.neutral[600],
+          text:colors.neutral[500],
+          dark:colors.neutral[200],
+          ["dark-hover"]:colors.neutral[100],
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
