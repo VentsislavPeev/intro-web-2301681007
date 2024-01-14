@@ -6,7 +6,7 @@ interface LabelProps {
   text?: string;
   subtext?: boolean;
   asButton?:boolean;
-  buttonType?:"default"|"ghost"|"destructive"|"outline"|"secondary";
+  buttonType?:"default"|"ghost"|"none"|"dark";
   onClick?:any
   className?: string;
 
@@ -17,7 +17,7 @@ export const Label = ({text, subtext, asButton, buttonType = "default", classNam
    return(
       <div className={cn("text-5xl bg-neutral-100 py-[60px] w-full flex justify-center",className)}>
          {asButton ? (
-            <Button onClick={onClick} variant={buttonType} size="label">{text}</Button>
+            <Button onClick={onClick} variant={buttonType} size="default">{text}</Button>
          ):(
             <>
             <h1>{text}</h1>
