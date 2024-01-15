@@ -13,14 +13,14 @@ import {
    Search,
 } from "lucide-react";
 import { useState } from "react";
-import { useSidebarContext } from "../contexts/SidebarContext";
+import { useSidebarContext } from "../_contexts/SidebarContext";
 
 export default function PageHeader() {
    const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
 
    return (
-      <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-         <PageHeaderFirstSection hidden={showFullWidthSearch}/>
+      <div className="flex justify-between gap-10 pt-2 mx-4 mb-6 lg:gap-20">
+         <PageHeaderFirstSection hidden={showFullWidthSearch} />
          <form
             className={`gap-4 flex-grow justify-center ${
                showFullWidthSearch ? "flex" : "md:flex hidden"
@@ -38,13 +38,12 @@ export default function PageHeader() {
                </Button>
             )}
             <div className="flex flex-grow max-w-[600px]">
-               
                <input
                   type="search"
                   placeholder="Search"
-                  className="rounded-l-full border bg-transparent border-secondary-border py-1 px-4 text-md w-full focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-1 bg-transparent border rounded-l-full outline-none border-secondary-border text-md focus:border-blue-500"
                />
-               <Button className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0">
+               <Button className="flex-shrink-0 px-4 py-2 border border-l-0 rounded-r-full border-secondary-border">
                   <YoutubeSearchIconImg />
                </Button>
             </div>
@@ -73,7 +72,11 @@ export default function PageHeader() {
             <Button variant="ghost" size="icon">
                <YoutubeNotificationBellImg />
             </Button>
-            <Button className="w-14 hover:bg-neutral-900" variant="none" size="icon">
+            <Button
+               className="w-14 hover:bg-neutral-900"
+               variant="none"
+               size="icon"
+            >
                <YoutubeProfilePicImg />
             </Button>
          </div>
@@ -82,10 +85,12 @@ export default function PageHeader() {
 }
 
 type PageHeaderFirstSectionProps = {
-   hidden?:boolean
-}
+   hidden?: boolean;
+};
 
-export function PageHeaderFirstSection({hidden = false}:PageHeaderFirstSectionProps) {
+export function PageHeaderFirstSection({
+   hidden = false,
+}: PageHeaderFirstSectionProps) {
    const { toggle } = useSidebarContext();
 
    return (
@@ -97,7 +102,9 @@ export function PageHeaderFirstSection({hidden = false}:PageHeaderFirstSectionPr
          <Button onClick={toggle} variant="ghost" size="icon">
             <Menu color="white" />
          </Button>
-         <YoutubeImg />
+         <div className="hover:cursor-pointer" onClick={()=>window.location.reload()}>
+            <YoutubeImg />
+         </div>
       </div>
    );
 }

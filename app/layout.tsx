@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'React and Next',
-  description: 'An introduction to React.js and Next.js',
+  title: 'Not Youtube',
+  description: 'Nothing works',
 }
 
 export default function RootLayout({

@@ -6,19 +6,19 @@ import { categories, videos } from "@/data/home";
 import { useState } from "react";
 import { VideoGridItem } from "@/components/ui/video-grid-item";
 import { Sidebar } from "./_layouts/sidebar";
-import { SidebarProvider } from "@/app/contexts/SidebarContext";
+import { SidebarProvider } from "@/app/_contexts/SidebarContext";
 
 export default function YoutubePage() {
    const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
    return (
       <SidebarProvider>
-         <div className="max-h-screen flex flex-col">
+         <div className="flex flex-col max-h-screen">
             <PageHeader />
             <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
                <Sidebar />
-               <div className="overflow-x-hidden pr-8 pl-5 pb-4">
-                  <div className="sticky top-0 bg-neutral-900 z-10 pb-4">
+               <div className="pb-4 pl-5 pr-8 overflow-x-hidden">
+                  <div className="sticky top-0 z-10 pb-4 bg-neutral-900">
                      <CategoryPills
                         selectedCategory={selectedCategory}
                         onSelect={setSelectedCategory}

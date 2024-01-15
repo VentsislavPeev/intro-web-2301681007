@@ -35,7 +35,7 @@ import {
    ReactNode,
    useState,
 } from "react";
-import { useSidebarContext } from "../contexts/SidebarContext";
+import { useSidebarContext } from "../_contexts/SidebarContext";
 import { PageHeaderFirstSection } from "./pageheader";
 
 export function Sidebar() {
