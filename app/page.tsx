@@ -3,13 +3,14 @@
 import { CategoryPills } from "@/components/ui/category-pills";
 import PageHeader from "./_layouts/pageheader";
 import { categories, videos } from "@/data/home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VideoGridItem } from "@/components/ui/video-grid-item";
 import { Sidebar } from "./_layouts/sidebar";
 import { SidebarProvider } from "@/app/_contexts/SidebarContext";
 
 export default function YoutubePage() {
    const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+   const filteredVideos = videos.filter((video)=>video.categories.includes(selectedCategory))
 
    return (
       <SidebarProvider>
@@ -26,7 +27,7 @@ export default function YoutubePage() {
                      />
                   </div>
                   <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
-                     {videos.map((video) => (
+                     {filteredVideos.map((video) => (
                         <VideoGridItem key={video.id} {...video} />
                      ))}
                   </div>
