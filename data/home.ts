@@ -33,8 +33,8 @@ export const videos = [
          "https://i.ytimg.com/vi/GU-2HfdaBlM/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAyViRzbGI6DrUdOTsnP48BVA7qtQ",
       videoUrl:
          "https://i.ytimg.com/an_webp/GU-2HfdaBlM/mqdefault_6s.webp?du=3000&sqp=CND4kK0G&rs=AOn4CLD8Ix1TNTwUj3hYGPB7en-r7S8Qfg",
-         categories: ["All", "Recently uploaded", "Watched"],
-
+      categories: ["All", "Recently uploaded", "Watched"],
+      videoHref: "https://www.youtube.com/watch?v=GU-2HfdaBlM&t=46s&pp=ygUWZGFpbHkgZG9zZSBvZiBpbnRlcm5ldA%3D%3D"
    },
    {
       id: "2",
@@ -52,8 +52,8 @@ export const videos = [
          "https://i.ytimg.com/vi/7DKv5H5Frt0/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCwwcqbXmruBaiJzjr1jxIjRmiA_g",
       videoUrl:
          "https://i.ytimg.com/an_webp/7DKv5H5Frt0/mqdefault_6s.webp?du=3000&sqp=CNuKka0G&rs=AOn4CLCr0ZtjMLiQrEhpclAcRoWKuU2trQ",
-         categories: ["All", "Vlog", "Recently uploaded"],
-
+      categories: ["All", "Vlog", "Recently uploaded"],
+      videoHref: "https://www.youtube.com/watch?v=7DKv5H5Frt0&t=158s&pp=ygUJdG9tIHNjb3R0"
    },
    {
       id: "3",
@@ -69,8 +69,7 @@ export const videos = [
       duration: 128,
       thumbnailUrl:
          "https://i.ytimg.com/vi/OnkTUKtxRic/hq720.jpg?sqp=-oaymwExCNAFEJQDSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYfyATKEowDw==&rs=AOn4CLBakXvGutD6flTK7034xvLAdn9o2w",
-         categories: ["All", "Music"],
-
+      categories: ["All", "Music"],
    },
    {
       id: "4",
@@ -88,8 +87,7 @@ export const videos = [
          "https://i.ytimg.com/vi/K4FgLj5HVTo/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBcPJWtDYO8BkXKSDtmZOr0rSFm2A",
       videoUrl:
          "https://i.ytimg.com/an_webp/K4FgLj5HVTo/mqdefault_6s.webp?du=3000&sqp=CKzpkK0G&rs=AOn4CLCekyJ47rVtf1X0T14EEZUZgGAs0g",
-         categories: ["All", "Watched", "Recently uploaded", "Vlog"],
-
+      categories: ["All", "Watched", "Recently uploaded", "Vlog"],
    },
    {
       id: "5",
@@ -125,7 +123,7 @@ export const videos = [
          "https://i.ytimg.com/vi/gAtgoOVYI-c/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAu2JVxnApR6Dm2bX9-sOv_D7CS9Q",
       videoUrl:
          "https://i.ytimg.com/an_webp/gAtgoOVYI-c/mqdefault_6s.webp?du=3000&sqp=CKTtkK0G&rs=AOn4CLA6GddUx5iHgnAbTEa2TlSxhrLyDA",
-      categories: ["All","Cooking", "New to you"],
+      categories: ["All", "Cooking", "New to you"],
    },
    {
       id: "7",

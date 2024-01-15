@@ -2,6 +2,7 @@
 
 import { formatDuration } from "@/utils/format-duration"
 import { formatTimeAgo } from "@/utils/format-time-ago"
+import { redirect } from "next/dist/server/api-utils"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
@@ -18,12 +19,13 @@ type VideoGridItemProps = {
    duration:number
    thumbnailUrl:string
    videoUrl?: string
+   videoHref?: string
 }
 
 const VIEW_FORMATTER = Intl.NumberFormat(undefined, {notation:"compact"})
 
 export function VideoGridItem({
-   id,title,channel,views,postedAt,duration,thumbnailUrl,videoUrl
+   id,title,channel,views,postedAt,duration,thumbnailUrl,videoUrl,videoHref
 }:VideoGridItemProps){
    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
    const videoRef = useRef<HTMLVideoElement>(null)
@@ -41,7 +43,7 @@ export function VideoGridItem({
 
    return(
    <div className="flex flex-col gap-2" onMouseEnter={()=>setIsVideoPlaying(true)} onMouseLeave={()=>setIsVideoPlaying(false)}>
-      <a href={`/watch?v=${id}`} className="relative aspect-video">
+      <a href={`${videoHref}`} className="relative aspect-video">
          <Image alt={title} fill src={thumbnailUrl} className={`block w-full h-full object-cover transition-[border-radius] duration-200 ${isVideoPlaying ? "rounded-none" : "rounded-xl"}`} />
          <div className="absolute bottom-1 right-1 bg-neutral-900 text-white font-medium text-sm px-0.5 rounded">
             {formatDuration(duration)}
@@ -60,10 +62,10 @@ export function VideoGridItem({
             <a href={`/watch/?v=${id}`} className="font-bold text-neutral-50/90">
                {title}
             </a>
-            <a href={`/@${channel.id}`}className="text-neutral-400 text-sm">
+            <a href={`/@${channel.id}`}className="text-sm text-neutral-400">
                {channel.name}
             </a>
-            <div className=" text-neutral-400 text-sm">
+            <div className="text-sm text-neutral-400">
                {VIEW_FORMATTER.format(views)} Views • {formatTimeAgo(postedAt)} 
             </div>
          </div>
