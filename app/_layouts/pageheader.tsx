@@ -41,7 +41,7 @@ export default function PageHeader() {
             <div className="flex flex-grow max-w-[600px]">
                <input
                   type="search"
-                  placeholder="Search 2301681007"
+                  placeholder="Search 2301681007 test"
                   className="w-full px-4 py-1 bg-transparent border rounded-l-full outline-none border-secondary-border text-md focus:border-blue-500"
                />
                <Button className="flex-shrink-0 px-4 py-2 border border-l-0 rounded-r-full border-secondary-border">
