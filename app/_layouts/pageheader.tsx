@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useSidebarContext } from "../_contexts/SidebarContext";
+import { useRouter } from "next/navigation";
 
 export default function PageHeader() {
    const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
@@ -92,6 +93,7 @@ export function PageHeaderFirstSection({
    hidden = false,
 }: PageHeaderFirstSectionProps) {
    const { toggle } = useSidebarContext();
+   const router = useRouter()
 
    return (
       <div
@@ -102,7 +104,7 @@ export function PageHeaderFirstSection({
          <Button onClick={toggle} variant="ghost" size="icon">
             <Menu color="white" />
          </Button>
-         <div className="hover:cursor-pointer" onClick={()=>window.location.reload()}>
+         <div className="hover:cursor-pointer" onClick={()=>router.push("/")}>
             <YoutubeImg />
          </div>
       </div>

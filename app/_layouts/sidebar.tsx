@@ -72,7 +72,7 @@ export function Sidebar() {
                   : "hidden"
             }`}
          >
-            <div className="lg:hidden pt-2 pb-2 px-2 sticky top-0 bg-neutral-900">
+            <div className="sticky top-0 px-2 pt-2 pb-2 lg:hidden bg-neutral-900">
                <PageHeaderFirstSection />
             </div>
             <LargeSidebarSection>
@@ -235,13 +235,13 @@ function LargeSidebarSection({
 
    return (
       <div>
-         {title && <div className="ml-4 mt-2 text-lg mb-1"> {title}</div>}
+         {title && <div className="mt-2 mb-1 ml-4 text-lg"> {title}</div>}
          {visibleChildren}
          {showExpandButton && (
             <Button
                onClick={() => setIsExpanded((e) => !e)}
                variant="ghost"
-               className="w-full flex items-center rounded-lg gap-4 p-3"
+               className="flex items-center w-full gap-4 p-3 rounded-lg"
             >
                <ButtonIcon className="w-4 h-4" />
                <div>{isExpanded ? "Show Less" : "Show More"}</div>
@@ -285,7 +285,7 @@ function LargeSidebarItem({
             <IconOrImgUrl className="w-4 h-4" />
          )}
 
-         <div className="whitespace-nowrap overflow-hidden text-ellipsis">
+         <div className="overflow-hidden whitespace-nowrap text-ellipsis">
             {title}
          </div>
       </a>
